@@ -30,14 +30,14 @@ export default class Sprite extends Container
 
         /**
          * The anchor sets the origin point of the texture.
-         * The default is 0,0 this means the texture's origin is the top left
+         * The default is 0.5,0.5 which puts the origin at the center of the texture.
          * Setting the anchor to 0.5,0.5 means the texture's origin is centered
          * Setting the anchor to 1,1 would mean the texture's origin point will be the bottom right corner
          *
          * @member {PIXI.ObservablePoint}
          * @private
          */
-        this._anchor = new ObservablePoint(this._onAnchorUpdate, this);
+        this._anchor = new ObservablePoint(this._onAnchorUpdate, this, 0.5, 0.5);
 
         /**
          * The texture that the sprite is using
