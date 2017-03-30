@@ -619,8 +619,14 @@ export default class DisplayObject extends EventEmitter
         this._filters = value && value.slice();
     }
 
-    get origin() {
-        return this.parent ? this.parent.origin : this
+    /**
+     * Gets the highest-level object in the scene graph.
+     *
+     * @member {PIXI.DisplayObject}
+     */
+    get origin()
+    {
+        return this.parent ? this.parent.origin : this;
     }
 }
 
