@@ -618,6 +618,10 @@ export default class DisplayObject extends EventEmitter
     {
         this._filters = value && value.slice();
     }
+
+    get origin() {
+        return this.parent ? this.parent.origin : this
+    }
 }
 
 // performance increase to avoid using call.. (10x faster)
